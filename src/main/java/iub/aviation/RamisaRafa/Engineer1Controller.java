@@ -7,7 +7,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Engineer1Controller {
@@ -18,25 +17,25 @@ public class Engineer1Controller {
     @javafx.fxml.FXML
     private Label label;
     @javafx.fxml.FXML
-    private TableColumn<engineer01, String> replacementTC;
+    private TableColumn<Engineer1ModelClass, String> replacementTC;
     @javafx.fxml.FXML
-    private TableColumn<engineer01, String> systemTC;
+    private TableColumn<Engineer1ModelClass, String> systemTC;
     @javafx.fxml.FXML
-    private TableColumn<engineer01, String> problemTC;
+    private TableColumn<Engineer1ModelClass, String> problemTC;
     @javafx.fxml.FXML
-    private TableColumn<engineer01, String> statusTC;
+    private TableColumn<Engineer1ModelClass, String> statusTC;
     @javafx.fxml.FXML
     private TextField reportproblemTF;
     @javafx.fxml.FXML
-    private TableColumn<engineer01, String> helicopterTC;
+    private TableColumn<Engineer1ModelClass, String> helicopterTC;
     @javafx.fxml.FXML
-    private TableView<engineer01> tableview;
+    private TableView<Engineer1ModelClass> tableview;
     @javafx.fxml.FXML
     private TextField systemcheckTF;
     @javafx.fxml.FXML
     private TextField maintainencestatusTF;
 
-    private ArrayList<engineer01> userList = new ArrayList<>();
+    private ArrayList<Engineer1ModelClass> userList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -73,7 +72,7 @@ public class Engineer1Controller {
         maintainencestatusTF.clear();
         helicopterCB.setValue(null);
 
-        engineer01 u = new engineer01(system, problem, replacement, status, helicopter);
+        Engineer1ModelClass u = new Engineer1ModelClass(system, problem, replacement, status, helicopter);
         tableview.getItems().add(u);
         userList.add(u);
     }
@@ -84,7 +83,7 @@ public class Engineer1Controller {
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(new FileOutputStream("engineer01.bin"));
-            for (engineer01 u : tableview.getItems())
+            for (Engineer1ModelClass u : tableview.getItems())
                 oos.writeObject(u);
 
         } catch (IOException e) {

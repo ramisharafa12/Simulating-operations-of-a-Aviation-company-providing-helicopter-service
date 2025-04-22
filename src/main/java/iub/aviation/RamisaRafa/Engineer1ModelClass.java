@@ -1,16 +1,14 @@
 package iub.aviation.RamisaRafa;
 
 
-import java.time.LocalDate;
-
-public class engineer01 {
+public class Engineer1ModelClass {
     private String helicopter;
     private String system;
     private String problem;
     private String replacement;
     private String status;
 
-    public engineer01(String helicopter, String system, String problem, String replacement, String status) {
+    public Engineer1ModelClass(String helicopter, String system, String problem, String replacement, String status) {
         this.helicopter = helicopter;
         this.system = system;
         this.problem = problem;
