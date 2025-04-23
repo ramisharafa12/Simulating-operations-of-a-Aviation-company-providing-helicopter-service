@@ -7,13 +7,21 @@ import java.time.LocalDate;
 public class Flight_ScheduleController {
 
     @javafx.fxml.FXML
-    private ComboBox<String> flightFromfxid;
+    private TableView TableFoePilotFlightShedulefx;
     @javafx.fxml.FXML
-    private ComboBox<String> flightToFxif;
+    private ComboBox flightToComboBoxFxif;
     @javafx.fxml.FXML
-    private DatePicker datepicker;
+    private TableColumn HelicopterModelfx;
     @javafx.fxml.FXML
-    private TextArea flightdetails;
+    private TableColumn LocationfxId;
+    @javafx.fxml.FXML
+    private TableColumn FlightTimefx;
+    @javafx.fxml.FXML
+    private ComboBox flightFromComboBoxfxid;
+    @javafx.fxml.FXML
+    private TableColumn pilotNamefxid;
+    @javafx.fxml.FXML
+    private DatePicker FlightScheduleDate;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -22,7 +30,7 @@ public class Flight_ScheduleController {
         flightToFxif.getItems().addAll("Dhaka", "Chittagong", "Sylhet", "Cox's Bazar");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void searchForFlightSchrdulrOnAction(ActionEvent actionEvent) {
         LocalDate flightDate = datepicker.getValue();
         String from = flightFromfxid.getValue();
@@ -48,7 +56,7 @@ public class Flight_ScheduleController {
         flightdetails.setText(result);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void cancelForFlightScheduleOnAction(ActionEvent actionEvent) {
         LocalDate flightDate = datepicker.getValue();
         String from = flightFromfxid.getValue();
@@ -64,7 +72,7 @@ public class Flight_ScheduleController {
         showInfo("Cancelled", message);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void changeFlightScheduleOnAction(ActionEvent actionEvent) {
         LocalDate flightDate = datepicker.getValue();
         String from = flightFromfxid.getValue();
@@ -97,5 +105,9 @@ public class Flight_ScheduleController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void searchForPilotFlightScheduleOnAction(ActionEvent actionEvent) {
     }
 }
