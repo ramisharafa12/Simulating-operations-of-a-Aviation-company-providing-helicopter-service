@@ -2,91 +2,97 @@ package iub.aviation.Nishat;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import java.time.LocalDate;
 
 public class Flight_ScheduleController {
 
     @javafx.fxml.FXML
-    private TableView TableFoePilotFlightShedulefx;
+    private ComboBox<String> flightFromfxid;
     @javafx.fxml.FXML
-    private ComboBox flightToComboBoxFxif;
+    private ComboBox<String> flightToFxif;
     @javafx.fxml.FXML
-    private TableColumn HelicopterModelfx;
-    @javafx.fxml.FXML
-    private TableColumn LocationfxId;
-    @javafx.fxml.FXML
-    private TableColumn FlightTimefx;
-    @javafx.fxml.FXML
-    private ComboBox flightFromComboBoxfxid;
-    @javafx.fxml.FXML
-    private TableColumn pilotNamefxid;
-    @javafx.fxml.FXML
-    private DatePicker FlightScheduleDate;
+    private DatePicker datepicker;
     @javafx.fxml.FXML
     private TextArea flightdetails;
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Optionally initialize combo boxes, set default values, etc.
+        // Sample airport locations
+        flightFromfxid.getItems().addAll("Dhaka", "Chittagong", "Sylhet", "Cox's Bazar");
+        flightToFxif.getItems().addAll("Dhaka", "Chittagong", "Sylhet", "Cox's Bazar");
     }
 
     @javafx.fxml.FXML
-    public void searchForPilotFlightScheduleOnAction(ActionEvent actionEvent) {
-        if (isInputValid()) {
-            // Logic for searching the flight schedule
-            String flightDetails = "Flight Schedule for: \n"
-                    + "From: " + flightFromComboBoxfxid.getValue() + "\n"
-                    + "To: " + flightToComboBoxFxif.getValue() + "\n"
-                    + "Date: " + FlightScheduleDate.getValue() + "\n";
+    public void searchForFlightSchrdulrOnAction(ActionEvent actionEvent) {
+        LocalDate flightDate = datepicker.getValue();
+        String from = flightFromfxid.getValue();
+        String to = flightToFxif.getValue();
 
-            // Display the flight details in the TextArea
-            flightdetails.setText(flightDetails);
-        } else {
-            // Show an error alert if the input is invalid
-            showError("Validation Error", "Please ensure all fields are selected and the date is chosen.");
+        if (flightDate == null || from == null || to == null) {
+            showError("Missing Input", "Please select a date, departure and destination.");
+            return;
         }
-    }
 
-    @javafx.fxml.FXML
-    public void changeFlightScheduleOnAction(ActionEvent actionEvent) {
-        if (isInputValid()) {
-            // Logic for changing the flight schedule
-            // Add your logic here
-            showInfo("Flight Schedule Changed", "The flight schedule has been successfully updated.");
-        } else {
-            showError("Validation Error", "Please ensure all fields are selected and the date is chosen.");
+        if (from.equals(to)) {
+            showError("Invalid Input", "Departure and destination cannot be the same.");
+            return;
         }
+
+        // Sample result
+        String result = "Flight Schedule Found:\n"
+                + "Date: " + flightDate + "\n"
+                + "From: " + from + "\n"
+                + "To: " + to + "\n"
+                + "Time: 10:00 AM\n"
+                + "Flight No: BGH-205";
+        flightdetails.setText(result);
     }
 
     @javafx.fxml.FXML
     public void cancelForFlightScheduleOnAction(ActionEvent actionEvent) {
-        if (isInputValid()) {
-            // Logic for canceling the flight schedule
-            // Add your logic here
-            showInfo("Flight Schedule Cancelled", "The flight schedule has been successfully cancelled.");
-        } else {
-            showError("Validation Error", "Please ensure all fields are selected and the date is chosen.");
+        LocalDate flightDate = datepicker.getValue();
+        String from = flightFromfxid.getValue();
+        String to = flightToFxif.getValue();
+
+        if (flightDate == null || from == null || to == null) {
+            showError("Missing Input", "Please select a date, departure and destination.");
+            return;
         }
+
+        String message = "Flight on " + flightDate + " from " + from + " to " + to + " has been cancelled.";
+        flightdetails.setText(message);
+        showInfo("Cancelled", message);
     }
 
-    // Helper method to validate the inputs
-    private boolean isInputValid() {
-        return flightFromComboBoxfxid.getValue() != null
-                && flightToComboBoxFxif.getValue() != null
-                && FlightScheduleDate.getValue() != null;
+    @javafx.fxml.FXML
+    public void changeFlightScheduleOnAction(ActionEvent actionEvent) {
+        LocalDate flightDate = datepicker.getValue();
+        String from = flightFromfxid.getValue();
+        String to = flightToFxif.getValue();
+
+        if (flightDate == null || from == null || to == null) {
+            showError("Missing Input", "Please select a date, departure and destination.");
+            return;
+        }
+
+        String newDate = flightDate.plusDays(1).toString(); // Example logic: shift flight to next day
+        String message = "Flight rescheduled:\nFrom " + from + " to " + to + "\nNew Date: " + newDate;
+        flightdetails.setText(message);
+        showInfo("Schedule Updated", message);
     }
 
-    // Method to show error alerts
-    private void showError(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+    // Show information alert
+    private void showInfo(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
 
-    // Method to show informational alerts
-    private void showInfo(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    // Show error alert
+    private void showError(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
