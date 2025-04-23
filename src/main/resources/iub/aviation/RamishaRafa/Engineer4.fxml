@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iub.aviation.RamisaRafa.Engineer4Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="37.0" text="Helicopter" />
+        <Label layoutX="31.0" layoutY="84.0" text="flight logs" />
+        <Label layoutX="324.0" layoutY="37.0" text="sensor data" />
+        <Button layoutX="42.0" layoutY="350.0" mnemonicParsing="false" onAction="#addOA" text="ADD" />
+        <ComboBox fx:id="helicopterCB" layoutX="92.0" layoutY="33.0" prefWidth="150.0" />
+        <Label layoutX="324.0" layoutY="93.0" text="Report Area" />
+        <TextField fx:id="flightlogsTF" layoutX="110.0" layoutY="80.0" />
+        <TextField fx:id="sensordataTF" layoutX="388.0" layoutY="33.0" />
+        <TextField fx:id="ReportAreaTF" layoutX="401.0" layoutY="90.0" />
+        <TableView fx:id="Tableview" layoutX="67.0" layoutY="138.0" prefHeight="200.0" prefWidth="347.0">
+            <columns>
+                <TableColumn fx:id="HelicopterTC" prefWidth="75.0" text="Helicopter" />
+                <TableColumn fx:id="flightlogsTC" prefWidth="75.0" text="flight logs" />
+                <TableColumn fx:id="sensordataTC" prefWidth="93.60003662109375" text="sensor data" />
+                <TableColumn fx:id="ReportAreaTC" prefWidth="101.5999755859375" text="Report Area" />
+            </columns>
+        </TableView>
+        <Button layoutX="451.0" layoutY="363.0" mnemonicParsing="false" onAction="#exportreportOA" text="Export report" />
+    </children>
+</AnchorPane>

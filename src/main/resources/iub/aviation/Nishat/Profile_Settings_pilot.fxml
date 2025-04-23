@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iub.aviation.Nishat.Profile_Settingscontroller_Pilot">
+   <children>
+      <Label alignment="CENTER" layoutX="138.0" layoutY="23.0" prefHeight="38.0" prefWidth="323.0" text="Update Pilot Information" underline="true">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="92.0" text="Pilot Name: " />
+      <Label layoutX="68.0" layoutY="160.0" text="Pilot Flight Time:" />
+      <Label layoutX="71.0" layoutY="191.0" text="Pilot Renew Licence Number:" />
+      <Button layoutX="181.0" layoutY="276.0" mnemonicParsing="false" onAction="#deletepilotInformationsonAction" prefHeight="26.0" prefWidth="128.0" text="Delete" />
+      <TextArea fx:id="textfxid" layoutX="328.0" layoutY="252.0" prefHeight="108.0" prefWidth="212.0" text="&#10;&#10;            Confirmation Text&#10;" />
+      <Label layoutX="71.0" layoutY="217.0" prefHeight="18.0" prefWidth="154.0" text="certifications:" />
+      <Label layoutX="63.0" layoutY="125.0" text="Pilot Contact Info: " />
+      <TextField fx:id="fxidPilotName" layoutX="157.0" layoutY="88.0" prefHeight="26.0" prefWidth="128.0" />
+      <TextField fx:id="fxPilotContactInfo" layoutX="179.0" layoutY="121.0" prefHeight="26.0" prefWidth="128.0" />
+      <TextField fx:id="fxPilotFlightTime" layoutX="179.0" layoutY="156.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="PilotRenewLicenceNum" layoutX="241.0" layoutY="187.0" prefHeight="26.0" prefWidth="128.0" />
+      <TextField fx:id="CirtificationPilotfx" layoutX="166.0" layoutY="222.0" prefHeight="26.0" prefWidth="128.0" />
+      <Button layoutX="107.0" layoutY="326.0" mnemonicParsing="false" onAction="#updatepilotInformationsonAction" prefHeight="26.0" prefWidth="136.0" text="Update" />
+      <Button layoutX="28.0" layoutY="276.0" mnemonicParsing="false" onAction="#addpilotInformationsonAction" prefHeight="26.0" prefWidth="122.0" text="Add" />
+   </children>
+</AnchorPane>
