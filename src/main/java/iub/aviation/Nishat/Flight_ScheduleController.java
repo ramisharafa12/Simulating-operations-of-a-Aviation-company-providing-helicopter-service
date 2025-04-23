@@ -1,38 +1,45 @@
 package iub.aviation.Nishat;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Flight_ScheduleController
 {
 
     @javafx.fxml.FXML
-    private ComboBox updateflightFromfxid;
+    private TableView TableFoePilotFlightShedulefx;
     @javafx.fxml.FXML
-    private TextArea updateflightdetails;
+    private ComboBox flightToComboBoxFxif;
     @javafx.fxml.FXML
-    private ComboBox updateflightToFxif;
+    private TableColumn HelicopterModelfx;
     @javafx.fxml.FXML
-    private DatePicker FlightDatePckerfx;
+    private TableColumn LocationfxId;
     @javafx.fxml.FXML
-    private TextField flightNoFxID;
+    private TableColumn FlightTimefx;
+    @javafx.fxml.FXML
+    private ComboBox flightFromComboBoxfxid;
+    @javafx.fxml.FXML
+    private TableColumn pilotNamefxid;
+    @javafx.fxml.FXML
+    private DatePicker FlightScheduleDate;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @Deprecated
+    public void changeFlightScheduleOnAction(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
     public void searchForFlightSchrdulrOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void UpdateflightForPilotrOnAction(ActionEvent actionEvent) {
+    @Deprecated
+    public void cancelForFlightScheduleOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void deleteForFlightUpdateSchrdulrOnAction(ActionEvent actionEvent) {
+    public void searchForPilotFlightScheduleOnAction(ActionEvent actionEvent) {
     }
 }
