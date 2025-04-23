@@ -38,7 +38,7 @@ public class LoginPage {
 
     private boolean validateCredentials(String username, String password) {
         String validUsername = "admin";
-        String validPassword = "password123";
+        String validPassword = "admin1234";
 
         return username.equals(validUsername) && password.equals(validPassword);
     }
