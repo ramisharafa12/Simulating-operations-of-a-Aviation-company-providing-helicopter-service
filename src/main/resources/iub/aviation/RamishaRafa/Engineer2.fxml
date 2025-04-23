@@ -28,5 +28,6 @@
             </columns>
         </TableView>
         <Button layoutX="464.0" layoutY="356.0" mnemonicParsing="false" onAction="#sendplanOA" text="send plan" />
+      <Label fx:id="label" layoutX="247.0" layoutY="343.0" />
     </children>
 </AnchorPane>

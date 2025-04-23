@@ -8,25 +8,25 @@ import javafx.scene.control.TextField;
 
 public class Trainer1Controller {
     @javafx.fxml.FXML
-    private TableColumn HelicopterTC;
+    private TableColumn <Trainer1Controller,String>HelicopterTC;
     @javafx.fxml.FXML
     private TextField sessionTF;
     @javafx.fxml.FXML
     private TextField instructorTF;
     @javafx.fxml.FXML
-    private ComboBox helicopterCB;
+    private ComboBox <String>helicopterCB;
     @javafx.fxml.FXML
-    private TableColumn TrainingsessionTC;
+    private TableColumn <Trainer1Controller,Integer>TrainingsessionTC;
     @javafx.fxml.FXML
-    private TableView tableview;
+    private TableView <Trainer1Controller>tableview;
     @javafx.fxml.FXML
-    private TableColumn instructorTC;
+    private TableColumn <Trainer1Controller,String>instructorTC;
     @javafx.fxml.FXML
     private TextField PerformanceTF;
     @javafx.fxml.FXML
     private TextField TrainingsessionTF;
     @javafx.fxml.FXML
-    private TableColumn sessionTC;
+    private TableColumn <Trainer1Controller,String>sessionTC;
 
     @javafx.fxml.FXML
     public void submitOA(ActionEvent actionEvent) {

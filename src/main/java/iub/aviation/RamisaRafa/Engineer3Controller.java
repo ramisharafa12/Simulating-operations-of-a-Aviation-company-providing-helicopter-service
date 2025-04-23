@@ -12,17 +12,19 @@ public class Engineer3Controller {
     @javafx.fxml.FXML
     private TextField FaultdetailsTF;
     @javafx.fxml.FXML
-    private TableColumn HelicopterTC;
+    private TableColumn <Engineer3Controller,String>HelicopterTC;
     @javafx.fxml.FXML
     private TextField RepairnotesTF;
     @javafx.fxml.FXML
-    private TableColumn AssignengineerTC;
+    private TableColumn <Engineer3Controller,String>AssignengineerTC;
     @javafx.fxml.FXML
-    private ComboBox helicopterCB;
+    private ComboBox <String>helicopterCB;
     @javafx.fxml.FXML
-    private TableView tableview;
+    private TableView <Engineer3Controller>tableview;
     @javafx.fxml.FXML
-    private TableColumn FaultdetailsTC;
+    private TableColumn <Engineer3Controller,String>FaultdetailsTC;
+
+
 
     @javafx.fxml.FXML
     public void updatestatusOA(ActionEvent actionEvent) {

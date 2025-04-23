@@ -6,11 +6,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
+
 public class Trainer2Controller {
     @javafx.fxml.FXML
-    private TableColumn TraineenameTC;
+    private TableColumn <Trainer2Controller,String>TraineenameTC;
     @javafx.fxml.FXML
-    private TableColumn venueTC;
+    private TableColumn <Trainer2Controller,String>venueTC;
     @javafx.fxml.FXML
     private TextField traineeTF;
     @javafx.fxml.FXML
@@ -18,17 +20,17 @@ public class Trainer2Controller {
     @javafx.fxml.FXML
     private TextField coursenameTF;
     @javafx.fxml.FXML
-    private TableView tableview;
+    private TableView <Trainer2Controller>tableview;
     @javafx.fxml.FXML
-    private TableColumn TrainernameTC;
+    private TableColumn <Trainer2Controller,String>TrainernameTC;
     @javafx.fxml.FXML
     private TextField venueTF;
     @javafx.fxml.FXML
-    private TableColumn dateTC;
+    private TableColumn <Trainer2Controller, LocalDate>dateTC;
     @javafx.fxml.FXML
     private DatePicker trainingdateDP;
     @javafx.fxml.FXML
-    private TableColumn CourseTC;
+    private TableColumn <Trainer2Controller,String>CourseTC;
 
     @javafx.fxml.FXML
     public void addOA(ActionEvent actionEvent) {
