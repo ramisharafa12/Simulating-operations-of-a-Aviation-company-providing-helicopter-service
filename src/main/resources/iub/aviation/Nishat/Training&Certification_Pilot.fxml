@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="iub.aviation.Nishat.Training_CertificationController_Pilot"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iub.aviation.Nishat.Training_CertificationController_Pilot">
+   <children>
+      <Label alignment="CENTER" layoutX="134.0" layoutY="23.0" prefHeight="38.0" prefWidth="357.0" text="Pilot Training &amp; Certification" underline="true">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="115.0" text="Training Name:" />
+      <Label layoutX="73.0" layoutY="153.0" text="Training ID:" />
+      <Label layoutX="73.0" layoutY="191.0" text="Training Duration:" />
+      <ComboBox fx:id="trainingDuration" layoutX="189.0" layoutY="187.0" prefHeight="26.0" prefWidth="124.0" />
+      <Label layoutX="75.0" layoutY="227.0" text="Training From:" />
+      <Label layoutX="346.0" layoutY="227.0" text="Training To:" />
+      <DatePicker fx:id="datepickFrom" layoutX="168.0" layoutY="223.0" prefHeight="26.0" prefWidth="138.0" />
+      <DatePicker fx:id="datePickTo" layoutX="433.0" layoutY="223.0" prefHeight="26.0" prefWidth="116.0" />
+      <TextField fx:id="trainingNamefxId" layoutX="182.0" layoutY="111.0" prefHeight="26.0" prefWidth="138.0" />
+      <TextField fx:id="trainingIDfx" layoutX="189.0" layoutY="149.0" prefHeight="18.0" prefWidth="124.0" />
+      <Button layoutX="339.0" layoutY="300.0" mnemonicParsing="false" onAction="#CollectCertificationOnAction" prefHeight="26.0" prefWidth="138.0" text="Collect Certification" />
+      <Button layoutX="105.0" layoutY="300.0" mnemonicParsing="false" onAction="#enrollTrainingOnAction" prefHeight="26.0" prefWidth="153.0" text="Enroll Traininng" />
+   </children>
 </AnchorPane>
