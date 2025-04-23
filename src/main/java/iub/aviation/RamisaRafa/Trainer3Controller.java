@@ -7,9 +7,9 @@ import javafx.scene.control.TextField;
 
 public class Trainer3Controller {
     @javafx.fxml.FXML
-    private TableColumn SelectTraineeTC;
+    private TableColumn <Trainer3Controller,String>SelectTraineeTC;
     @javafx.fxml.FXML
-    private TableColumn InstructorcommentsTC;
+    private TableColumn <Trainer3Controller,String>InstructorcommentsTC;
     @javafx.fxml.FXML
     private TextField SelectTraineeTF;
     @javafx.fxml.FXML
@@ -17,11 +17,11 @@ public class Trainer3Controller {
     @javafx.fxml.FXML
     private TextField InstructorcommentsTF;
     @javafx.fxml.FXML
-    private TableColumn RecordNotesTC;
+    private TableColumn <Trainer3Controller,String>RecordNotesTC;
     @javafx.fxml.FXML
-    private TableColumn performanceratingsTC;
+    private TableColumn<Trainer3Controller,Integer> performanceratingsTC;
     @javafx.fxml.FXML
-    private TableView Tableview;
+    private TableView <Trainer3Controller>Tableview;
     @javafx.fxml.FXML
     private TextField RecordNotesTF;
 

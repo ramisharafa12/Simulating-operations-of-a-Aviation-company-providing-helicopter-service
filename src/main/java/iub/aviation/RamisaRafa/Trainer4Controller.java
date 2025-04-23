@@ -7,17 +7,17 @@ import javafx.scene.control.TextField;
 
 public class Trainer4Controller {
     @javafx.fxml.FXML
-    private TableColumn SimulatornameTC;
+    private TableColumn <Trainer4Controller,String>SimulatornameTC;
     @javafx.fxml.FXML
-    private TableColumn PerformanceReportTC;
+    private TableColumn <Trainer4Controller,String>PerformanceReportTC;
     @javafx.fxml.FXML
-    private TableColumn equipmentnameTC;
+    private TableColumn <Trainer4Controller,String>equipmentnameTC;
     @javafx.fxml.FXML
     private TextField equipmentnameTF;
     @javafx.fxml.FXML
     private TextField PerformanceReportTF;
     @javafx.fxml.FXML
-    private TableView Tableview;
+    private TableView <Trainer4Controller>Tableview;
     @javafx.fxml.FXML
     private TextField SimulatornameTF;
 
