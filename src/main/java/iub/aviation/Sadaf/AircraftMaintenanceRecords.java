@@ -1,11 +1,11 @@
 package iub.aviation.Sadaf;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class AircraftMaintenanceRecords {
@@ -37,67 +37,22 @@ public class AircraftMaintenanceRecords {
 
     @javafx.fxml.FXML
     public void initialize() {
-        mainTypeTC.setCellValueFactory(new PropertyValueFactory<>("mainType"));
-        statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        techTC.setCellValueFactory(new PropertyValueFactory<>("technician"));
-        dateTC.setCellValueFactory(new PropertyValueFactory<>("date"));
+    }
 
+    @javafx.fxml.FXML
+    public void loadClickOnButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void flagIssueClickOnButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void checkClickOnBUtton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void approveClickOnButton(ActionEvent actionEvent) {
     }
 }
-     abstract loadSampleData() {
-
-}
-
-private void loadSampleData() {
-    Object maintenanceRecords = FXCollections.observableArrayList(
-            new MaintenanceRecord("Type A", "Completed", "Tech 1", "2023-10-01"),
-            new MaintenanceRecord("Type B", "Pending", "Tech 2", "2023-10-02"),
-            new MaintenanceRecord("Type C", "In Progress", "Tech 3", "2023-10-03")
-    );
-    ChoiceBox<Object> maintainanceTV;
-    maintainanceTV.setItems(maintenanceRecords);
-}
-
-@FXML
-public void loadClickOnButton(ActionEvent actionEvent) {
-    System.out.println("Load button clicked.");
-    maintainanceTV.setItems(maintenanceRecords);
-}
-
-@FXML
-public void flagIssueClickOnButton(ActionEvent actionEvent) {
-    MaintenanceRecord selectedRecord = maintainanceTV.getSelectionModel().getSelectedItem();
-    if (selectedRecord != null) {
-        selectedRecord.setStatus("Flagged");
-        maintainanceTV.refresh();
-        System.out.println("Flagged issue for: " + selectedRecord.getMainType());
-    } else {
-        System.out.println("No record selected to flag.");
-    }
-}
-
-@FXML
-public void checkClickOnButton(ActionEvent actionEvent) {
-    MaintenanceRecord selectedRecord = maintainanceTV.getSelectionModel().getSelectedItem();
-    if (selectedRecord != null) {
-        recDetailsLB.setText("Details for " + selectedRecord.getMainType() + ": " + selectedRecord.getStatus());
-        System.out.println("Checked status for: " + selectedRecord.getMainType());
-    } else {
-        System.out.println("No record selected to check.");
-    }
-}
-
-@FXML
-public void approveClickOnButton(ActionEvent actionEvent) {
-    MaintenanceRecord selectedRecord = maintainanceTV.getSelectionModel().getSelectedItem();
-    if (selectedRecord != null) {
-        selectedRecord.setStatus("Approved");
-        maintainanceTV.refresh();
-        System.out.println("Approved record for: " + selectedRecord.getMainType());
-    } else {
-        System.out.println("No record selected to approve.");
-    }
-}
-
-
 
