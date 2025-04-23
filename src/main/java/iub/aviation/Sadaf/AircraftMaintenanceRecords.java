@@ -1,12 +1,10 @@
 package iub.aviation.Sadaf;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -46,18 +44,17 @@ public class AircraftMaintenanceRecords {
 
     }
 }
+     abstract loadSampleData() {
 
-
-// Load sample data
-loadSampleData();
-    }
+}
 
 private void loadSampleData() {
-    maintenanceRecords = FXCollections.observableArrayList(
+    Object maintenanceRecords = FXCollections.observableArrayList(
             new MaintenanceRecord("Type A", "Completed", "Tech 1", "2023-10-01"),
             new MaintenanceRecord("Type B", "Pending", "Tech 2", "2023-10-02"),
             new MaintenanceRecord("Type C", "In Progress", "Tech 3", "2023-10-03")
     );
+    ChoiceBox<Object> maintainanceTV;
     maintainanceTV.setItems(maintenanceRecords);
 }
 
@@ -101,5 +98,6 @@ public void approveClickOnButton(ActionEvent actionEvent) {
         System.out.println("No record selected to approve.");
     }
 }
+
 
 

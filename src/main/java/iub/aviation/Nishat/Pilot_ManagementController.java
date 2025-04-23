@@ -1,9 +1,12 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class Pilot_ManagementController {
 
@@ -23,7 +26,7 @@ public class Pilot_ManagementController {
 
     // Method to add a pilot
     @javafx.fxml.FXML
-    public void addPilotOnAction(ActionEvent actionEvent) {
+    public void addPilotOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Add pilot logic
             String confirmationMessage = "Pilot added successfully:\n"
@@ -32,6 +35,10 @@ public class Pilot_ManagementController {
                     + "Licence Number: " + PilotLicenceNumfxid.getText();
             PilotConfirmationfxid.setText(confirmationMessage);
             showInfo("Success", "Pilot added successfully.");
+
+            // Switch to the pilot list or admin dashboard
+            Stage stage = (Stage) PilotConfirmationfxid.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "PilotList");  // Or any other scene name like "AdminDashboard"
         } else {
             showError("Validation Error", "Please fill in all fields.");
         }
@@ -39,7 +46,7 @@ public class Pilot_ManagementController {
 
     // Method to update pilot details
     @javafx.fxml.FXML
-    public void updatePilotOnAction(ActionEvent actionEvent) {
+    public void updatePilotOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Update pilot logic
             String confirmationMessage = "Pilot updated successfully:\n"
@@ -48,6 +55,10 @@ public class Pilot_ManagementController {
                     + "Licence Number: " + PilotLicenceNumfxid.getText();
             PilotConfirmationfxid.setText(confirmationMessage);
             showInfo("Success", "Pilot updated successfully.");
+
+            // Switch to the pilot list or admin dashboard
+            Stage stage = (Stage) PilotConfirmationfxid.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "PilotList");  // Or any other scene name like "AdminDashboard"
         } else {
             showError("Validation Error", "Please fill in all fields.");
         }
@@ -55,13 +66,17 @@ public class Pilot_ManagementController {
 
     // Method to remove a pilot
     @javafx.fxml.FXML
-    public void removePilotOnAction(ActionEvent actionEvent) {
+    public void removePilotOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Remove pilot logic
             String confirmationMessage = "Pilot removed successfully:\n"
                     + "ID: " + PilotIdfxid.getText();
             PilotConfirmationfxid.setText(confirmationMessage);
             showInfo("Success", "Pilot removed successfully.");
+
+            // Switch to the pilot list or admin dashboard
+            Stage stage = (Stage) PilotConfirmationfxid.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "PilotList");  // Or any other scene name like "AdminDashboard"
         } else {
             showError("Validation Error", "Please provide a valid Pilot ID.");
         }
