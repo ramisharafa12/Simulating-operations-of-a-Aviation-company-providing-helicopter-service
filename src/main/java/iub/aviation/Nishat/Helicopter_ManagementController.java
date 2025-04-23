@@ -1,9 +1,12 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class Helicopter_ManagementController {
 
@@ -23,7 +26,7 @@ public class Helicopter_ManagementController {
 
     // Method to add a helicopter
     @javafx.fxml.FXML
-    public void addHelicopterOnAction(ActionEvent actionEvent) {
+    public void addHelicopterOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Add helicopter logic
             String confirmationMessage = "Helicopter added successfully:\n"
@@ -32,6 +35,10 @@ public class Helicopter_ManagementController {
                     + "Licence Number: " + helicopterLicenceNum.getText();
             confirmationText.setText(confirmationMessage);
             showInfo("Success", "Helicopter added successfully.");
+
+            // Switch to the helicopter list or admin dashboard
+            Stage stage = (Stage) confirmationText.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "HelicopterList");
         } else {
             showError("Validation Error", "Please fill in all fields.");
         }
@@ -39,7 +46,7 @@ public class Helicopter_ManagementController {
 
     // Method to update helicopter details
     @javafx.fxml.FXML
-    public void updateHelicopterOnAction(ActionEvent actionEvent) {
+    public void updateHelicopterOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Update helicopter logic
             String confirmationMessage = "Helicopter updated successfully:\n"
@@ -48,6 +55,10 @@ public class Helicopter_ManagementController {
                     + "Licence Number: " + helicopterLicenceNum.getText();
             confirmationText.setText(confirmationMessage);
             showInfo("Success", "Helicopter updated successfully.");
+
+            // Switch to the helicopter list or admin dashboard
+            Stage stage = (Stage) confirmationText.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "HelicopterList");
         } else {
             showError("Validation Error", "Please fill in all fields.");
         }
@@ -55,13 +66,17 @@ public class Helicopter_ManagementController {
 
     // Method to remove a helicopter
     @javafx.fxml.FXML
-    public void removeHelicopterOnAction(ActionEvent actionEvent) {
+    public void removeHelicopterOnAction(ActionEvent actionEvent) throws IOException {
         if (isInputValid()) {
             // Remove helicopter logic
             String confirmationMessage = "Helicopter removed successfully:\n"
                     + "ID: " + helicopterId.getText();
             confirmationText.setText(confirmationMessage);
             showInfo("Success", "Helicopter removed successfully.");
+
+            // Switch to the helicopter list or admin dashboard
+            Stage stage = (Stage) confirmationText.getScene().getWindow();
+            SceneSwitcher.switchTo(stage, "HelicopterList");
         } else {
             showError("Validation Error", "Please provide a Helicopter ID.");
         }
