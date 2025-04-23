@@ -1,12 +1,14 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.beans.property.SimpleStringProperty;
-
+import javafx.stage.Stage;
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class View_Assigned_FlightsController {
@@ -49,7 +51,7 @@ public class View_Assigned_FlightsController {
     }
 
     @FXML
-    public void searchForPilotFlightScheduleOnAction(ActionEvent actionEvent) {
+    public void searchForPilotFlightScheduleOnAction(ActionEvent actionEvent) throws IOException {
         LocalDate date = FlightScheduleDate.getValue();
         String from = flightFromComboBoxfxid.getValue();
         String to = flightToComboBoxFxif.getValue();
@@ -71,6 +73,10 @@ public class View_Assigned_FlightsController {
         );
 
         TableFoePilotFlightShedulefx.setItems(flightList);
+
+        // After searching, you can switch to another scene if necessary
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "FlightScheduleResults");  // Replace with your desired scene
     }
 
     private void showAlert(Alert.AlertType type, String title, String message) {
