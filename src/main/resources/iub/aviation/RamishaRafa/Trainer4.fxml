@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulatingoperationsofaaviationcompanyprovidinghelicopterservice.RamishaRafa.Trainer4Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iub.aviation.RamisaRafa.Trainer4Controller">
     <children>
         <Label layoutX="26.0" layoutY="27.0" text="Equipment name" />
         <Label layoutX="29.0" layoutY="78.0" text="Simulator name" />

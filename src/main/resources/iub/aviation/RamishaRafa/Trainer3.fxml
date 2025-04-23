@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulatingoperationsofaaviationcompanyprovidinghelicopterservice.RamishaRafa.Trainer3Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iub.aviation.RamisaRafa.Trainer3Controller">
     <children>
         <Label layoutX="24.0" layoutY="27.0" text="Select Trainee" />
         <Label layoutX="24.0" layoutY="81.0" text="Flight Record Notes" />
