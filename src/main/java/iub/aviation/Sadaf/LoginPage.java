@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LoginPage {
-    javafx.fxml.FXML
+    @ javafx.fxml.FXML
     private Label userLabel;
     @javafx.fxml.FXML
     private Label logLabel;
