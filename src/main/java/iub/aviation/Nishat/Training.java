@@ -1,29 +1,27 @@
 package iub.aviation.Nishat;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
-public class FlightTraining {
+public class Training {
+
     private String trainingId;
     private String trainingName;
-    private int courseDuration;  // Duration in days, or however you'd like to represent it
+    private int courseDuration; // in days or hours
     private String eligibilityRequirements;
     private String status;
-    private List<TestResult> assessmentResults;
     private String certificationStatus;
-    private Date completionDate;
+    private LocalDateTime completionDate;
 
-    // Constructor
-    public FlightTraining(String trainingId, String trainingName, int courseDuration,
-                          String eligibilityRequirements, String status,
-                          List<TestResult> assessmentResults, String certificationStatus,
-                          Date completionDate) {
+    // Constructors
+    public Training() {}
+
+    public Training(String trainingId, String trainingName, int courseDuration, String eligibilityRequirements,
+                    String status, String certificationStatus, LocalDateTime completionDate) {
         this.trainingId = trainingId;
         this.trainingName = trainingName;
         this.courseDuration = courseDuration;
         this.eligibilityRequirements = eligibilityRequirements;
         this.status = status;
-        this.assessmentResults = assessmentResults;
         this.certificationStatus = certificationStatus;
         this.completionDate = completionDate;
     }
@@ -69,14 +67,6 @@ public class FlightTraining {
         this.status = status;
     }
 
-    public List<TestResult> getAssessmentResults() {
-        return assessmentResults;
-    }
-
-    public void setAssessmentResults(List<TestResult> assessmentResults) {
-        this.assessmentResults = assessmentResults;
-    }
-
     public String getCertificationStatus() {
         return certificationStatus;
     }
@@ -85,24 +75,22 @@ public class FlightTraining {
         this.certificationStatus = certificationStatus;
     }
 
-    public Date getCompletionDate() {
+    public LocalDateTime getCompletionDate() {
         return completionDate;
     }
 
-    public void setCompletionDate(Date completionDate) {
+    public void setCompletionDate(LocalDateTime completionDate) {
         this.completionDate = completionDate;
     }
 
-    // Optional: toString method for debugging
     @Override
     public String toString() {
-        return "FlightTraining{" +
+        return "Training{" +
                 "trainingId='" + trainingId + '\'' +
                 ", trainingName='" + trainingName + '\'' +
                 ", courseDuration=" + courseDuration +
                 ", eligibilityRequirements='" + eligibilityRequirements + '\'' +
                 ", status='" + status + '\'' +
-                ", assessmentResults=" + assessmentResults +
                 ", certificationStatus='" + certificationStatus + '\'' +
                 ", completionDate=" + completionDate +
                 '}';
