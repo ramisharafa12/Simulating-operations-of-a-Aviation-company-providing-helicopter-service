@@ -1,9 +1,11 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
+import javafx.stage.Stage;
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Update_Flight_ScheduleController {
@@ -27,7 +29,7 @@ public class Update_Flight_ScheduleController {
     }
 
     @FXML
-    public void UpdateflightForPilotrOnAction(ActionEvent actionEvent) {
+    public void UpdateflightForPilotrOnAction(ActionEvent actionEvent) throws IOException {
         String flightNo = flightNoFxID.getText();
         LocalDate date = FlightDatePckerfx.getValue();
         String from = updateflightFromfxid.getValue();
@@ -53,10 +55,14 @@ public class Update_Flight_ScheduleController {
 
         updateflightdetails.setText(details);
         showAlert(Alert.AlertType.INFORMATION, "Flight Updated", "The flight schedule has been successfully updated.");
+
+        // After successful update, switch to another scene (for example, the "AdminDashboard" scene)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "AdminDashboard");  // Replace with your desired scene
     }
 
     @FXML
-    public void deleteForFlightUpdateSchrdulrOnAction(ActionEvent actionEvent) {
+    public void deleteForFlightUpdateSchrdulrOnAction(ActionEvent actionEvent) throws IOException {
         String flightNo = flightNoFxID.getText();
 
         if (flightNo == null || flightNo.isEmpty()) {
@@ -66,6 +72,10 @@ public class Update_Flight_ScheduleController {
 
         updateflightdetails.setText("Flight No " + flightNo + " has been cancelled.");
         showAlert(Alert.AlertType.INFORMATION, "Flight Cancelled", "Flight " + flightNo + " is cancelled successfully.");
+
+        // After cancellation, switch to another scene (for example, the "AdminDashboard" scene)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "AdminDashboard");  // Replace with your desired scene
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {

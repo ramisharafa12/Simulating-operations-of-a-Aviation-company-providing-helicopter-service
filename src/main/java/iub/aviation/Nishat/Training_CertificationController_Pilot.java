@@ -1,10 +1,13 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class Training_CertificationController_Pilot {
 
@@ -27,7 +30,7 @@ public class Training_CertificationController_Pilot {
 
     // Action for "Enroll Training" button - Enrolls the pilot in a training program
     @javafx.fxml.FXML
-    public void enrollTrainingOnAction(ActionEvent actionEvent) {
+    public void enrollTrainingOnAction(ActionEvent actionEvent) throws IOException {
         String trainingName = trainingNamefxId.getText();
         String trainingID = trainingIDfx.getText();
         String duration = trainingDuration.getValue();
@@ -45,11 +48,15 @@ public class Training_CertificationController_Pilot {
 
         // Optionally, clear fields after enrollment
         clearFields();
+
+        // After enrolling, switch to another scene (e.g., Pilot Dashboard)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "PilotDashboard");
     }
 
     // Action for "Collect Certification" button - Marks the pilot as having completed the training and collects the certification
     @javafx.fxml.FXML
-    public void CollectCertificationOnAction(ActionEvent actionEvent) {
+    public void CollectCertificationOnAction(ActionEvent actionEvent) throws IOException {
         String trainingName = trainingNamefxId.getText();
         String trainingID = trainingIDfx.getText();
 
@@ -64,6 +71,10 @@ public class Training_CertificationController_Pilot {
 
         // Optionally, clear fields after collecting certification
         clearFields();
+
+        // After collecting certification, switch to another scene (e.g., Pilot Dashboard)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "PilotDashboard");
     }
 
     // Helper method to show informational alerts
