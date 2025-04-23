@@ -1,6 +1,5 @@
 package iub.aviation.Nishat;
 
-
 import javafx.beans.property.SimpleStringProperty;
 
 public class PilotFlightSchedule {
@@ -16,19 +15,8 @@ public class PilotFlightSchedule {
         this.location = new SimpleStringProperty(location);
     }
 
-    public String getPilotName() {
-        return pilotName.get();
-    }
-
-    public String getFlightTime() {
-        return flightTime.get();
-    }
-
-    public String getHelicopterModel() {
-        return helicopterModel.get();
-    }
-
-    public String getLocation() {
-        return location.get();
-    }
+    public String getPilotName() { return pilotName.get(); }
+    public String getFlightTime() { return flightTime.get(); }
+    public String getHelicopterModel() { return helicopterModel.get(); }
+    public String getLocation() { return location.get(); }
 }
