@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="iub.aviation.Nishat.Add_Helicopter_FormController"
+            fx:controller="iub.aviation.Nishat.Flight_ScheduleController"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
