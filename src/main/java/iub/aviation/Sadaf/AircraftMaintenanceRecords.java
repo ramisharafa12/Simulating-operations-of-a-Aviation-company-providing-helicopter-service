@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class AircraftMaintenanceRecords {
@@ -37,6 +38,10 @@ public class AircraftMaintenanceRecords {
 
     @javafx.fxml.FXML
     public void initialize() {
+        mainTypeTC.setCellValueFactory(new PropertyValueFactory<>("mainType"));
+        statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
+        techTC.setCellValueFactory(new PropertyValueFactory<>("technician"));
+        dateTC.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 
     @javafx.fxml.FXML
@@ -45,6 +50,7 @@ public class AircraftMaintenanceRecords {
 
     @javafx.fxml.FXML
     public void flagIssueClickOnButton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
