@@ -1,9 +1,12 @@
 package iub.aviation.Nishat;
 
+import iub.aviation.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class Profile_Settingscontroller_Pilot {
 
@@ -27,7 +30,7 @@ public class Profile_Settingscontroller_Pilot {
 
     // Action for "Add" button - Adds new pilot information
     @javafx.fxml.FXML
-    public void addpilotInformationsonAction(ActionEvent actionEvent) {
+    public void addpilotInformationsonAction(ActionEvent actionEvent) throws IOException {
         String name = fxidPilotName.getText();
         String contactInfo = fxPilotContactInfo.getText();
         String flightTime = fxPilotFlightTime.getText();
@@ -39,11 +42,15 @@ public class Profile_Settingscontroller_Pilot {
 
         // Optionally, clear the fields after adding
         clearFields();
+
+        // After adding, switch to another scene (e.g., Pilot Dashboard)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "PilotDashboard");
     }
 
     // Action for "Update" button - Updates existing pilot information
     @javafx.fxml.FXML
-    public void updatepilotInformationsonAction(ActionEvent actionEvent) {
+    public void updatepilotInformationsonAction(ActionEvent actionEvent) throws IOException {
         String name = fxidPilotName.getText();
         String contactInfo = fxPilotContactInfo.getText();
         String flightTime = fxPilotFlightTime.getText();
@@ -55,11 +62,15 @@ public class Profile_Settingscontroller_Pilot {
 
         // Optionally, clear the fields after updating
         clearFields();
+
+        // After updating, switch to another scene (e.g., Pilot Dashboard)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "PilotDashboard");
     }
 
     // Action for "Delete" button - Deletes pilot information
     @javafx.fxml.FXML
-    public void deletepilotInformationsonAction(ActionEvent actionEvent) {
+    public void deletepilotInformationsonAction(ActionEvent actionEvent) throws IOException {
         String name = fxidPilotName.getText();
 
         // Placeholder for delete logic (e.g., deleting data from a database or file)
@@ -67,6 +78,10 @@ public class Profile_Settingscontroller_Pilot {
 
         // Optionally, clear the fields after deletion
         clearFields();
+
+        // After deleting, switch to another scene (e.g., Pilot Dashboard)
+        Stage stage = (Stage) actionEvent.getSource();
+        SceneSwitcher.switchTo(stage, "PilotDashboard");
     }
 
     // Helper method to show informational alerts
